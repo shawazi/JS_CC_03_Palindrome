@@ -15,9 +15,12 @@ let stripped = reversed.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
 let penultimate = stripped.replace(/\s{2,}/g," ");
 let final = penultimate.toLowerCase();
 
+let initial = string.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+let second = initial.replace(/\s{2,}/g," ");
+let ult = second.toLowerCase();
 
 function isPal(input) {
-    if (input.toLowerCase() == final) {
+    if (ult == final) {
         console.log(`Yeah ${input} is a palindrome idk`);
     }
     else {
