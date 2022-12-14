@@ -1,4 +1,6 @@
-let string = prompt("Enter a string to test if it's a palindrome: ")
+let string = prompt("Enter a string to test if it's a palindrome: ");
+
+let input = string;
 
 function reverse(string) {
     let reversed = '';
@@ -7,8 +9,6 @@ function reverse(string) {
     }
     return reversed;
   }
-
-  let input = string;
 
   function isPal(input) {
     let reversed = reverse(input);
