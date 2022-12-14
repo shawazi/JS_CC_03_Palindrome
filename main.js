@@ -1,31 +1,25 @@
-let input = prompt("Yeah, hi, what's the string you want to check? Enter it here: ");
-
-let string = input;
+let string = prompt("Enter a string to test if it's a palindrome: ")
 
 function reverse(string) {
-    let reversed = "";
+    let reversed = '';
     for (let i = string.length - 1; i >= 0; i--) {
-        reversed += string[i];
+      reversed += string[i];
     }
     return reversed;
-}
+  }
 
-let reversed = reverse(string);
-let stripped = reversed.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
-let penultimate = stripped.replace(/\s{2,}/g," ");
-let final = penultimate.toLowerCase();
+  let input = string;
 
-let initial = input.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
-let second = initial.replace(/\s{2,}/g," ");
-let ult = second.toLowerCase();
-
-function isPal(input) {
-    if (ult == final) {
-        console.log(`Yeah ${input} is a palindrome idk`);
+  function isPal(input) {
+    let reversed = reverse(input);
+    let final = reversed.toLowerCase();
+    input = input.toLowerCase();
+    for (let i = 0; i < input.length / 2; i++) {
+      if (input[i] !== final[i]) {
+        return console.log(`It appears that ${input} is not a palindrome`);
+      }
     }
-    else {
-        console.log(`It appears that ${input} is not a palindrome, idk`);
-    }
-}
+    return console.log(`It appears that ${input} is a palindrome`);
+  }
 
 console.log(isPal(input));
